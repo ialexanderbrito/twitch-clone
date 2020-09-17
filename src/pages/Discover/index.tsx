@@ -8,6 +8,7 @@ import CategoryList from '../../components/CategoryList';
 import StreamList from '../../components/StreamList';
 import ChannelList from '../../components/ChannelList';
 import VideoList from '../../components/VideoList';
+import CarouselList from '../../components/CarouselList';
 
 import { Wrapper, Container, Main } from './styles';
 interface Item {
@@ -25,7 +26,7 @@ const Discover: React.FC = () => {
       },
       {
         key: 'C1',
-        render: () => <VideoList />,
+        render: () => <CarouselList />,
       },
       {
         key: 'LIVE_CHANNELS',
@@ -43,12 +44,12 @@ const Discover: React.FC = () => {
       },
       {
         key: 'CONTINUE_WATCHING',
-        render: () => <Title>Continue assistindo</Title>,
+        render: () => <Title>Canais ao vivo que achamos que vai gostar</Title>,
         isTitle: true,
       },
       {
         key: 'C3',
-        render: () => <StreamList />,
+        render: () => <VideoList />,
       },
       {
         key: 'OFFLINE_CHANNELS',
