@@ -5,7 +5,16 @@ import {
   Feather,
 } from '@expo/vector-icons';
 
-import { Container, Avatar, OnlineStatus, RightSide, Button } from './styles';
+import user1 from '../../images/avatar/avatar1.png';
+
+import {
+  Container,
+  Avatar,
+  Img,
+  OnlineStatus,
+  RightSide,
+  Button,
+} from './styles';
 
 import colors from '../../styles/colors';
 
@@ -13,6 +22,7 @@ const Header: React.FC = () => {
   return (
     <Container>
       <Avatar>
+        <Img source={user1} />
         <OnlineStatus />
       </Avatar>
 
