@@ -1,5 +1,6 @@
 import React from 'react';
-import { Text } from 'react-native';
+
+import data from './data';
 
 import {
   List,
@@ -13,14 +14,18 @@ import {
   WhiteCircle,
 } from './styles';
 
+interface ItemProps {
+  item: typeof data[0];
+}
+
 const ChannelList: React.FC = () => {
-  const ChannelItem = () => (
+  const ChannelItem: React.FC<ItemProps> = ({ item }) => (
     <ChannelContainer>
       <LeftSide>
-        <Avatar />
+        <Avatar source={item.source} />
         <Column>
-          <Username>mixtuquenti</Username>
-          <Info>12 novos vídeos</Info>
+          <Username>{item.name}</Username>
+          <Info>{item.videos}</Info>
         </Column>
       </LeftSide>
 
@@ -31,18 +36,9 @@ const ChannelList: React.FC = () => {
   );
   return (
     <List>
-      <ChannelItem />
-      <ChannelItem />
-      <ChannelItem />
-      <ChannelItem />
-      <ChannelItem />
-      <ChannelItem />
-      <ChannelItem />
-      <ChannelItem />
-      <ChannelItem />
-      <ChannelItem />
-      <ChannelItem />
-      <ChannelItem />
+      {data.map((item) => (
+        <ChannelItem key={item.name} item={item} />
+      ))}
     </List>
   );
 };
