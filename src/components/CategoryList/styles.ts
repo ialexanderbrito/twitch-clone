@@ -20,13 +20,14 @@ export const CategoryName = styled.Text`
   margin-top: 5px;
   max-width: 98px;
   color: ${colors.black};
-  font-family: roboto_700;
+  font-family: Roobert_600SemiBold;
   font-size: 13.5px;
 `;
 
 export const CategoryStatus = styled.View`
   flex-direction: row;
   align-items: center;
+  max-width: 92px;
 `;
 
 export const RedCircle = styled.View`
@@ -40,5 +41,6 @@ export const Info = styled.Text`
   margin-left: 4px;
   padding-bottom: 1px;
   color: ${colors.gray};
-  font-family: roboto_500;
+  font-family: Roobert_600SemiBold;
+  font-size: 13px;
 `;

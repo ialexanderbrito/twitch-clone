@@ -4,7 +4,6 @@ import { FlatList } from 'react-native';
 import Header from '../../components/Header';
 import Heading from '../../components/Heading';
 import Title from '../../components/Title';
-import CategoryList from '../../components/CategoryList';
 import StreamList from '../../components/StreamList';
 import ChannelList from '../../components/ChannelList';
 
@@ -23,21 +22,12 @@ const Following: React.FC = () => {
         render: () => <Heading>Seguindo</Heading>,
       },
       {
-        key: 'FOLLOWED_CATEGORIES',
-        render: () => <Title>Categorias</Title>,
-        isTitle: true,
-      },
-      {
-        key: 'C1',
-        render: () => <CategoryList />,
-      },
-      {
         key: 'LIVE_CHANNELS',
         render: () => <Title>Canais ao vivo</Title>,
         isTitle: true,
       },
       {
-        key: 'C2',
+        key: 'C1',
         render: () => <StreamList />,
       },
       {
@@ -46,7 +36,7 @@ const Following: React.FC = () => {
         isTitle: true,
       },
       {
-        key: 'C3',
+        key: 'C2',
         render: () => <StreamList />,
       },
       {
@@ -55,7 +45,7 @@ const Following: React.FC = () => {
         isTitle: true,
       },
       {
-        key: 'C4',
+        key: 'C3',
         render: () => <ChannelList />,
       },
     ];

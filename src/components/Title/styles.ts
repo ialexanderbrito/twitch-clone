@@ -5,7 +5,7 @@ export const Container = styled.Text`
   color: ${colors.gray};
   background: ${colors.primary};
 
-  font-family: roboto_700;
+  font-family: Roobert_700Bold;
   font-size: 14px;
   text-transform: uppercase;
 

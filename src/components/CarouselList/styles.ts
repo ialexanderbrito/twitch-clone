@@ -23,7 +23,7 @@ export const VideoName = styled.Text`
   margin-top: 5px;
   max-width: 355px;
   color: ${colors.black};
-  font-family: roboto_700;
+  font-family: Roobert_700Bold;
   font-size: 15.5px;
 `;
 
@@ -46,7 +46,7 @@ export const TagView = styled.View`
 
 export const TagText = styled.Text`
   color: ${colors.black};
-  font-family: roboto_500;
+  font-family: Roobert_500Medium;
   font-size: 13px;
 `;
 
@@ -64,14 +64,14 @@ export const RedCircleText = styled.Text`
   color: ${colors.black};
   text-align: center;
   text-transform: uppercase;
-  font-family: roboto_500;
+  font-family: Roobert_500Medium;
   font-size: 13px;
 `;
 
 export const InfoCircle = styled.View`
   background: ${colors.primary};
   /* opacity: 0.65; */
-  width: 140px;
+  width: 150px;
   height: 20px;
   border-radius: 4.5px;
 
@@ -85,7 +85,7 @@ export const InfoCircleText = styled.Text`
   margin-left: 4px;
   margin-right: 4px;
   color: ${colors.black};
-  font-family: roboto_500;
+  font-family: Roobert_500Medium;
   font-size: 13px;
   text-align: center;
 `;

@@ -32,7 +32,7 @@ export const Column = styled.View`
 
 export const Username = styled.Text`
   color: ${colors.black};
-  font-family: roboto_500;
+  font-family: Roobert_600SemiBold;
   font-size: 16px;
 `;
 
@@ -40,6 +40,7 @@ export const Info = styled.Text`
   margin-top: 1px;
   color: ${colors.gray};
   font-size: 13px;
+  font-family: Roobert_500Medium;
 `;
 
 export const RightSide = styled.View``;

@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  MaterialIcons,
-  MaterialCommunityIcons,
-  Feather,
-} from '@expo/vector-icons';
+import { AntDesign, MaterialCommunityIcons, Feather } from '@expo/vector-icons';
 
 import user1 from '../../images/avatar/avatar1.png';
 
@@ -28,22 +24,18 @@ const Header: React.FC = () => {
 
       <RightSide>
         <Button>
-          <MaterialIcons
-            name="notifications-none"
-            size={26}
-            color={colors.black}
-          />
+          <AntDesign name="inbox" size={24} color={colors.black} />
         </Button>
 
         <Button>
           <MaterialCommunityIcons
             name="message-outline"
-            size={26}
+            size={24}
             color={colors.black}
           />
         </Button>
         <Button>
-          <Feather name="search" size={26} color={colors.black} />
+          <Feather name="search" size={24} color={colors.black} />
         </Button>
       </RightSide>
     </Container>

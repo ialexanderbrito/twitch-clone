@@ -23,7 +23,7 @@ const CategoryList: React.FC = () => {
       <CategoryName numberOfLines={1}>{item.name} </CategoryName>
       <CategoryStatus>
         <RedCircle />
-        <Info>{item.info}</Info>
+        <Info numberOfLines={1}>{item.info}</Info>
       </CategoryStatus>
     </CategoryContainer>
   );

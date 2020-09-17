@@ -34,9 +34,7 @@ const VideoList: React.FC = () => {
           <InfoCircleText>{item.info} espectadores</InfoCircleText>
         </InfoCircle>
       </Thumbnail>
-      <VideoName numberOfLines={1}>
-        {item.name} transmitindo {item.game}
-      </VideoName>
+      <VideoName numberOfLines={1}>{item.name}</VideoName>
       <VideoStatus>
         <TagRow>
           <TagView>

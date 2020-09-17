@@ -43,16 +43,17 @@ export const StreamAvatar = styled.Image`
 export const StreamUsername = styled.Text`
   color: ${colors.black};
   margin-left: 5px;
-  font-family: roboto_700;
+  font-family: Roobert_700Bold;
 `;
 
 export const StreamDescription = styled.Text`
   color: ${colors.black};
+  font-family: Roobert_400Regular;
 `;
 
 export const StreamCategory = styled.Text`
   color: ${colors.gray};
-  font-family: roboto_500;
+  font-family: Roobert_500Medium;
 `;
 
 export const TagRow = styled.View`
@@ -69,6 +70,6 @@ export const TagView = styled.View`
 
 export const TagText = styled.Text`
   color: ${colors.black};
-  font-family: roboto_500;
+  font-family: Roobert_500Medium;
   font-size: 13px;
 `;
