@@ -1,10 +1,11 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { Ionicons, MaterialCommunityIcons, Feather } from '@expo/vector-icons';
 
 import Following from './pages/Following';
 import ComingSoon from './pages/ComingSoon';
+import Discover from './pages/Discover';
 
 import colors from './styles/colors';
 
@@ -38,7 +39,7 @@ const Routes: React.FC = () => (
       }}
     >
       <Screen
-        name="Following"
+        name="Seguindo"
         component={Following}
         options={{
           tabBarIcon: ({ size, focused }) => {
@@ -53,8 +54,8 @@ const Routes: React.FC = () => (
         }}
       />
       <Screen
-        name="Discover"
-        component={ComingSoon}
+        name="Descubra"
+        component={Discover}
         options={{
           tabBarIcon: ({ size, focused }) => {
             return (
@@ -68,7 +69,7 @@ const Routes: React.FC = () => (
         }}
       />
       <Screen
-        name="Browse"
+        name="Procurar"
         component={ComingSoon}
         options={{
           tabBarIcon: ({ size, focused }) => {
@@ -90,6 +91,21 @@ const Routes: React.FC = () => (
             return (
               <MaterialCommunityIcons
                 name="trophy-outline"
+                size={size}
+                color={focused ? colors.purple : colors.black}
+              />
+            );
+          },
+        }}
+      />
+      <Screen
+        name="Transmitir"
+        component={ComingSoon}
+        options={{
+          tabBarIcon: ({ size, focused }) => {
+            return (
+              <Feather
+                name="radio"
                 size={size}
                 color={focused ? colors.purple : colors.black}
               />
