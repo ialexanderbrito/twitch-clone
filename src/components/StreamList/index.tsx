@@ -11,7 +11,6 @@ import {
   StreamColumn,
   StreamHeader,
   StreamAvatar,
-  Img,
   StreamUsername,
   StreamDescription,
   StreamCategory,
