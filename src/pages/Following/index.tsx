@@ -1,6 +1,8 @@
 import React from 'react';
 import { FlatList } from 'react-native';
 
+import { useSwitchTheme } from '../../context/SwitchTheme';
+
 import Header from '../../components/Header';
 import Heading from '../../components/Heading';
 import Title from '../../components/Title';
@@ -15,6 +17,8 @@ interface Item {
 }
 
 const Following: React.FC = () => {
+  const { colors } = useSwitchTheme();
+
   const { data, indices } = React.useMemo(() => {
     const items: Item[] = [
       {
@@ -61,12 +65,13 @@ const Following: React.FC = () => {
   }, []);
 
   return (
-    <Wrapper>
+    <Wrapper colors={colors}>
       <Container>
         <Header />
 
         <Main>
           <FlatList<Item>
+            showsVerticalScrollIndicator={false}
             data={data}
             renderItem={({ item }) => item.render()}
             keyExtractor={(item) => item.key}
