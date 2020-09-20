@@ -1,6 +1,6 @@
 <h4 align="center">
 <img src=".github/twitch.png" width="300px" /><br>
- <b>📺 Clone do aplicativo de streaming Twitch.tv</b> 💰
+ <b>📺 Clone do aplicativo de streaming Twitch.tv</b>
 </h4>
 <p align="center">
     <img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/ialexanderbrito/twitch-clone?style=flat-square" />
