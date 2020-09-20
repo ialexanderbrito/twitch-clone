@@ -31,9 +31,10 @@ Extras:
 
 ### 📱 Screen
 
-<img src=".github/01.png" width="300px" /> <img src=".github/02.png" width="300px" /> <img src=".github/03.png" width="300px" />
 <h4 align="center">
-<img src=".github/04.png" width="300px" /> <img src=".github/05.png" width="300px" /><br>
+<img src=".github/01.png" width="300px" /> <img src=".github/02.png" width="300px" /> 
+<img src=".github/03.png" width="300px" /> <img src=".github/04.png" width="300px" /> 
+<img src=".github/05.png" width="300px" />
 </h4>
 
 ### 💻 Projeto
