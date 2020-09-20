@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { useSwitchTheme } from '../../context/SwitchTheme';
+
 import data from './data';
 
 import {
@@ -17,13 +19,19 @@ interface ItemProps {
 }
 
 const CategoryList: React.FC = () => {
+  const { colors } = useSwitchTheme();
+
   const CategoryItem: React.FC<ItemProps> = ({ item }) => (
     <CategoryContainer>
       <CategoryImage source={item.source} />
-      <CategoryName numberOfLines={1}>{item.name} </CategoryName>
+      <CategoryName colors={colors} numberOfLines={1}>
+        {item.name}{' '}
+      </CategoryName>
       <CategoryStatus>
-        <RedCircle />
-        <Info numberOfLines={1}>{item.info}</Info>
+        <RedCircle colors={colors} />
+        <Info colors={colors} numberOfLines={1}>
+          {item.info}
+        </Info>
       </CategoryStatus>
     </CategoryContainer>
   );

@@ -1,5 +1,15 @@
 import styled from 'styled-components/native';
-import colors from '../../styles/colors';
+interface Props {
+  colors: {
+    primary: string;
+    black: string;
+    gray: string;
+    tag: string;
+    green: string;
+    red: string;
+    purple: string;
+  };
+}
 
 export const List = styled.View`
   padding: 8px 0;
@@ -12,6 +22,8 @@ export const VideoContainer = styled.TouchableOpacity`
 export const Thumbnail = styled.TouchableOpacity`
   width: 355px;
   height: 200px;
+
+  background: #bf94ff;
 `;
 
 export const VideoImage = styled.Image`
@@ -19,10 +31,10 @@ export const VideoImage = styled.Image`
   height: 200px;
 `;
 
-export const VideoName = styled.Text`
+export const VideoName = styled.Text<Props>`
   margin-top: 5px;
   max-width: 355px;
-  color: ${colors.black};
+  color: ${(props) => props.colors.black};
   font-family: Roobert_700Bold;
   font-size: 15.5px;
 `;
@@ -37,21 +49,21 @@ export const TagRow = styled.View`
   flex-direction: row;
 `;
 
-export const TagView = styled.View`
-  background: ${colors.tag};
+export const TagView = styled.View<Props>`
+  background: ${(props) => props.colors.tag};
   padding: 2px 8px;
   border-radius: 10px;
   margin-right: 5px;
 `;
 
-export const TagText = styled.Text`
-  color: ${colors.black};
+export const TagText = styled.Text<Props>`
+  color: ${(props) => props.colors.black};
   font-family: Roobert_500Medium;
   font-size: 13px;
 `;
 
-export const RedCircle = styled.View`
-  background: ${colors.red};
+export const RedCircle = styled.View<Props>`
+  background: ${(props) => props.colors.red};
   width: 60px;
   height: 20px;
   border-radius: 4.5px;
@@ -61,7 +73,7 @@ export const RedCircle = styled.View`
 `;
 
 export const RedCircleText = styled.Text`
-  color: ${colors.black};
+  color: #efeff1;
   text-align: center;
   text-transform: uppercase;
   font-family: Roobert_500Medium;
@@ -69,9 +81,9 @@ export const RedCircleText = styled.Text`
 `;
 
 export const InfoCircle = styled.View`
-  background: ${colors.primary};
+  background: #000;
   /* opacity: 0.65; */
-  width: 150px;
+  width: 140px;
   height: 20px;
   border-radius: 4.5px;
 
@@ -81,10 +93,10 @@ export const InfoCircle = styled.View`
   bottom: 0;
 `;
 
-export const InfoCircleText = styled.Text`
+export const InfoCircleText = styled.Text<Props>`
   margin-left: 4px;
   margin-right: 4px;
-  color: ${colors.black};
+  color: #efeff1;
   font-family: Roobert_500Medium;
   font-size: 13px;
   text-align: center;

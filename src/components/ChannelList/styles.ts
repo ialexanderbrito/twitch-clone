@@ -1,11 +1,25 @@
-import styled from 'styled-components/native';
-import colors from '../../styles/colors';
+import styled, { css } from 'styled-components/native';
+interface Props {
+  colors: {
+    primary: string;
+    black: string;
+    gray: string;
+    tag: string;
+    green: string;
+    red: string;
+    purple: string;
+  };
+}
+
+const activeOpacityValue = { activeOpacity: 0.7 };
 
 export const List = styled.View`
   padding: 8px 0 0;
 `;
 
-export const ChannelContainer = styled.TouchableOpacity`
+export const ChannelContainer = styled.TouchableOpacity.attrs(
+  activeOpacityValue
+)`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -19,8 +33,8 @@ export const LeftSide = styled.View`
   align-items: center;
 `;
 
-export const Avatar = styled.Image`
-  background: ${colors.tag};
+export const Avatar = styled.Image<Props>`
+  background: ${(props) => props.colors.tag};
   width: 48px;
   height: 48px;
   border-radius: 24px;
@@ -30,23 +44,23 @@ export const Column = styled.View`
   padding-left: 10px;
 `;
 
-export const Username = styled.Text`
-  color: ${colors.black};
+export const Username = styled.Text<Props>`
+  color: ${(props) => props.colors.black};
   font-family: Roobert_600SemiBold;
   font-size: 16px;
 `;
 
-export const Info = styled.Text`
+export const Info = styled.Text<Props>`
   margin-top: 1px;
-  color: ${colors.gray};
+  color: ${(props) => props.colors.gray};
   font-size: 13px;
   font-family: Roobert_500Medium;
 `;
 
 export const RightSide = styled.View``;
 
-export const WhiteCircle = styled.View`
-  background: ${colors.black};
+export const WhiteCircle = styled.View<Props>`
+  background: ${(props) => props.colors.black};
   width: 9px;
   height: 9px;
   border-radius: 4.5px;

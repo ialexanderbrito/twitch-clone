@@ -1,7 +1,11 @@
 import React from 'react';
 
+import { useSwitchTheme } from '../../context/SwitchTheme';
+
+import data from '../VideoList/data';
+
 import streamThumbnail from '../../images/stream_thumbnail.jpg';
-import user1 from '../../images/avatar/avatar1.png';
+import user1 from '../../images/avatar/alexander.png';
 
 import {
   List,
@@ -19,32 +23,40 @@ import {
   TagText,
 } from './styles';
 
+interface ItemProps {
+  item: typeof data[0];
+}
+
 const StreamList: React.FC = () => {
-  const StreamItem = () => (
+  const { colors } = useSwitchTheme();
+
+  const StreamItem: React.FC<ItemProps> = ({ item }) => (
     <StreamContainer>
-      <StreamThumbnail source={streamThumbnail} />
+      <StreamThumbnail source={item.source} />
 
       <StreamColumn>
         <StreamRow>
           <StreamHeader>
-            <StreamAvatar source={user1} />
-            <StreamUsername numberOfLines={1}>ialexanderbrito</StreamUsername>
+            <StreamAvatar colors={colors} source={item.avatar} />
+            <StreamUsername colors={colors} numberOfLines={1}>
+              ialexanderbrito
+            </StreamUsername>
           </StreamHeader>
 
-          <StreamDescription numberOfLines={1}>
-            Front-end com Next.js
+          <StreamDescription colors={colors} numberOfLines={1}>
+            {item.title}
           </StreamDescription>
-          <StreamCategory numberOfLines={1}>
-            Ciência & tecnologia
+          <StreamCategory colors={colors} numberOfLines={1}>
+            {item.game}
           </StreamCategory>
         </StreamRow>
 
         <TagRow>
-          <TagView>
-            <TagText>Português</TagText>
+          <TagView colors={colors}>
+            <TagText colors={colors}>Português</TagText>
           </TagView>
-          <TagView>
-            <TagText>Ciência e tecnologia</TagText>
+          <TagView colors={colors}>
+            <TagText colors={colors}>{item.tag}</TagText>
           </TagView>
         </TagRow>
       </StreamColumn>
@@ -52,10 +64,9 @@ const StreamList: React.FC = () => {
   );
   return (
     <List>
-      <StreamItem />
-      <StreamItem />
-      <StreamItem />
-      <StreamItem />
+      {data.map((item) => (
+        <StreamItem key={item.name} item={item} />
+      ))}
     </List>
   );
 };

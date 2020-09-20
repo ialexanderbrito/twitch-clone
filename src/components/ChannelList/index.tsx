@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { useSwitchTheme } from '../../context/SwitchTheme';
+
 import data from './data';
 
 import {
@@ -19,18 +21,20 @@ interface ItemProps {
 }
 
 const ChannelList: React.FC = () => {
+  const { colors } = useSwitchTheme();
+
   const ChannelItem: React.FC<ItemProps> = ({ item }) => (
     <ChannelContainer>
       <LeftSide>
-        <Avatar source={item.source} />
+        <Avatar colors={colors} source={item.source} />
         <Column>
-          <Username>{item.name}</Username>
-          <Info>{item.videos}</Info>
+          <Username colors={colors}>{item.name}</Username>
+          <Info colors={colors}>{item.videos}</Info>
         </Column>
       </LeftSide>
 
       <RightSide>
-        <WhiteCircle />
+        <WhiteCircle colors={colors} />
       </RightSide>
     </ChannelContainer>
   );

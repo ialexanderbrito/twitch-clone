@@ -1,5 +1,15 @@
 import styled from 'styled-components/native';
-import colors from '../../styles/colors';
+interface Props {
+  colors: {
+    primary: string;
+    black: string;
+    gray: string;
+    tag: string;
+    green: string;
+    red: string;
+    purple: string;
+  };
+}
 
 export const List = styled.View`
   padding: 8px 0 24px;
@@ -33,26 +43,26 @@ export const StreamHeader = styled.View`
   align-items: center;
 `;
 
-export const StreamAvatar = styled.Image`
+export const StreamAvatar = styled.Image<Props>`
   width: 20px;
   height: 20px;
   border-radius: 10px;
-  background: ${colors.tag};
+  background: ${(props) => props.colors.tag};
 `;
 
-export const StreamUsername = styled.Text`
-  color: ${colors.black};
+export const StreamUsername = styled.Text<Props>`
+  color: ${(props) => props.colors.black};
   margin-left: 5px;
   font-family: Roobert_700Bold;
 `;
 
-export const StreamDescription = styled.Text`
-  color: ${colors.black};
+export const StreamDescription = styled.Text<Props>`
+  color: ${(props) => props.colors.black};
   font-family: Roobert_400Regular;
 `;
 
-export const StreamCategory = styled.Text`
-  color: ${colors.gray};
+export const StreamCategory = styled.Text<Props>`
+  color: ${(props) => props.colors.gray};
   font-family: Roobert_500Medium;
 `;
 
@@ -61,15 +71,15 @@ export const TagRow = styled.View`
   flex-direction: row;
 `;
 
-export const TagView = styled.View`
-  background: ${colors.tag};
+export const TagView = styled.View<Props>`
+  background: ${(props) => props.colors.tag};
   padding: 2px 8px;
   border-radius: 10px;
   margin-right: 5px;
 `;
 
-export const TagText = styled.Text`
-  color: ${colors.black};
+export const TagText = styled.Text<Props>`
+  color: ${(props) => props.colors.black};
   font-family: Roobert_500Medium;
   font-size: 13px;
 `;

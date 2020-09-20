@@ -1,13 +1,17 @@
 import React from 'react';
 
-import ghost from '../../images/ic_ghost_small.png';
+import { useSwitchTheme } from '../../context/SwitchTheme';
 
 import { Wrapper, Heading, Img } from './styles';
 
+import ghost from '../../images/ic_ghost_small.png';
+
 const ComingSoon: React.FC = () => {
+  const { colors } = useSwitchTheme();
+
   return (
-    <Wrapper>
-      <Heading>Coming soon...</Heading>
+    <Wrapper colors={colors}>
+      <Heading colors={colors}>Coming soon...</Heading>
       <Img source={ghost} />
     </Wrapper>
   );

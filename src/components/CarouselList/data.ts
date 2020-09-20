@@ -16,7 +16,7 @@ export default [
     name: 'alanzoka',
     game: 'Só na conversa',
     source: alanzoka,
-    info: '32,9 mil',
+    info: '32,1 mil',
   },
   {
     name: 'mixtuquenti',

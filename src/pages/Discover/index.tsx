@@ -1,6 +1,8 @@
 import React from 'react';
 import { Text, FlatList } from 'react-native';
 
+import { useSwitchTheme } from '../../context/SwitchTheme';
+
 import Header from '../../components/Header';
 import Heading from '../../components/Heading';
 import Title from '../../components/Title';
@@ -18,6 +20,8 @@ interface Item {
 }
 
 const Discover: React.FC = () => {
+  const { colors } = useSwitchTheme();
+
   const { data, indices } = React.useMemo(() => {
     const items: Item[] = [
       {
@@ -51,15 +55,6 @@ const Discover: React.FC = () => {
         key: 'C3',
         render: () => <VideoList />,
       },
-      {
-        key: 'OFFLINE_CHANNELS',
-        render: () => <Title>Canais offline</Title>,
-        isTitle: true,
-      },
-      {
-        key: 'C4',
-        render: () => <ChannelList />,
-      },
     ];
 
     const indices: number[] = [];
@@ -73,12 +68,13 @@ const Discover: React.FC = () => {
   }, []);
 
   return (
-    <Wrapper>
+    <Wrapper colors={colors}>
       <Container>
         <Header />
 
         <Main>
           <FlatList<Item>
+            showsVerticalScrollIndicator={false}
             data={data}
             renderItem={({ item }) => item.render()}
             keyExtractor={(item) => item.key}

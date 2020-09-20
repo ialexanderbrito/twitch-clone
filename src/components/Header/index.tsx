@@ -1,7 +1,11 @@
 import React from 'react';
 import { AntDesign, MaterialCommunityIcons, Feather } from '@expo/vector-icons';
 
-import user1 from '../../images/avatar/avatar1.png';
+import { useSwitchTheme } from '../../context/SwitchTheme';
+
+import SwitchThemes from '../../components/SwitchThemes';
+
+import user1 from '../../images/avatar/alexander.png';
 
 import {
   Container,
@@ -12,17 +16,22 @@ import {
   Button,
 } from './styles';
 
-import colors from '../../styles/colors';
-
 const Header: React.FC = () => {
+  const { colors } = useSwitchTheme();
+
   return (
     <Container>
-      <Avatar>
+      <Avatar colors={colors}>
         <Img source={user1} />
-        <OnlineStatus />
+        <OnlineStatus colors={colors} />
       </Avatar>
 
       <RightSide>
+        <SwitchThemes />
+        <Button>
+          <Feather name="video" size={24} color={colors.black} />
+        </Button>
+
         <Button>
           <AntDesign name="inbox" size={24} color={colors.black} />
         </Button>
@@ -34,6 +43,7 @@ const Header: React.FC = () => {
             color={colors.black}
           />
         </Button>
+
         <Button>
           <Feather name="search" size={24} color={colors.black} />
         </Button>
