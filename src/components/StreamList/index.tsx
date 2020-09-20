@@ -39,7 +39,7 @@ const StreamList: React.FC = () => {
           <StreamHeader>
             <StreamAvatar colors={colors} source={item.avatar} />
             <StreamUsername colors={colors} numberOfLines={1}>
-              ialexanderbrito
+              {item.name}
             </StreamUsername>
           </StreamHeader>
 
