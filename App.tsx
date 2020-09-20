@@ -3,6 +3,8 @@ import React from 'react';
 import { AppLoading } from 'expo';
 import { useFonts } from 'expo-font';
 
+import { ThemeSwitchProvider } from './src/context/SwitchTheme';
+
 import Roobert_200Light from './assets/fonts/roobert_light.otf';
 import Roobert_200LightItalic from './assets/fonts/roobert_lightitalic.otf';
 import Roobert_400Regular from './assets/fonts/roobert_regular.otf';
@@ -34,8 +36,10 @@ export default function App() {
 
   return (
     <>
-      <Routes />
-      <StatusBar style="light" />
+      <ThemeSwitchProvider>
+        <Routes />
+        <StatusBar style={'light'} translucent />
+      </ThemeSwitchProvider>
     </>
   );
 }
