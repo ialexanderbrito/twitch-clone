@@ -3,6 +3,8 @@
     "name": "TwitchTV",
     "slug": "TwitchTV",
     "version": "1.0.0",
+    "privacy": "public",
+    "sdkVersion": "39.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -13,9 +15,16 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "android": {
+      "package": "com.ialexanderbrito.TwitchTV"
+    },
+    "description": "\nClone do aplicativo de Streaming de games.",
+    "githubUrl": "https://github.com/ialexanderbrito/twitch-clone"
   }
 }
